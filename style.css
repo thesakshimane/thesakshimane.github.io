@@ -9,7 +9,7 @@
 body {
   background: linear-gradient(135deg, #fdf7f7, #fce4ce);
   color: #4a4a4a;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,9 @@ header {
 
 .blog-button:hover {
   background-color: #843c44;
-  transform: scale(1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #843c44;
+  transform: scale(1.02);
 }
 
 .main-content {
