@@ -68,9 +68,16 @@ body {
   /* border-bottom: 1px solid #333;  */
 }
 
-.sidebar-header h2 {
+.sidebar-header a {
   margin: 0;
   font-size: 18px;
+  text-decoration: solid;
+  color: var(--text-light);
+}
+
+.sidebar-header h2:hover {
+  transform: scale(1.1);
+  color: var(--bg-card);
 }
 
 .sidebar-close-button {
@@ -394,7 +401,6 @@ body {
   color: green;
   font-style: italic;
 }
-
 
 .footer-note {
   position: fixed;
