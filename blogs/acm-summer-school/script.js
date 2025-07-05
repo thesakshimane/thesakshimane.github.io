@@ -93,17 +93,35 @@ function revealSurprise() {
   }, 10);
 }
 
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbwM97OL4F0oLQCzMeSCueUUpvHT8qlhzV5ZDHysFzOWZVZ6de8UdbQsDSy0irhtTryPaw/exec";
+const sheetDBUrl = "https://sheetdb.io/api/v1/cclqlxulv3hy4"; // Replace with your API
+
 function handleFeedback(e) {
   e.preventDefault();
 
   const form = document.getElementById("feedbackForm");
-  const formData = new FormData(form);
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
 
-  fetch(scriptURL, {
+  const timestamp = new Date().toLocaleString(); // e.g. "7/5/2025, 2:08:45 PM"
+
+  const data = {
+    data: [
+      {
+        name: name,
+        email: email,
+        message: message,
+        timestamp: timestamp, // 👈 Add this line
+      },
+    ],
+  };
+
+  fetch(sheetDBUrl, {
     method: "POST",
-    body: formData,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
   })
     .then((res) => {
       if (res.ok) {
@@ -111,14 +129,13 @@ function handleFeedback(e) {
           "🎉 Thanks for your feedback!";
         form.reset();
       } else {
-        document.getElementById("feedbackMessage").textContent =
-          "Something went wrong. Please try again!";
+        throw new Error("Network response was not ok");
       }
     })
     .catch((error) => {
       console.error("Fetch error:", error);
       document.getElementById("feedbackMessage").textContent =
-        "Something went wrong. Please try again!";
+        "⚠️ Something went wrong. Please try again!";
     });
 }
 
