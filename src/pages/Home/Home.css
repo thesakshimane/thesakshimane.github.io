@@ -1,0 +1,233 @@
+.home {
+  width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-width));
+  margin: 0 auto;
+  padding: 0 0 var(--space-6);
+}
+
+.home section + section {
+  margin-top: var(--section-gap);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-rule);
+}
+
+.introduction {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.introduction-copy {
+  max-width: 40rem;
+}
+
+.introduction-image {
+  align-self: center;
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid var(--color-rule);
+}
+
+.introduction-image img {
+  display: block;
+  width: 100%;
+  /* aspect-ratio:  / ; */
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text);
+  font-size: 1.4em;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.35
+}
+
+h1 {
+  margin-bottom: var(--space-3);
+}
+
+h2 {
+  margin-bottom: var(--space-3);
+}
+
+h3 {
+  margin-bottom: var(--space-1);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-1);
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.introduction-copy > p:not(.eyebrow) {
+  margin-bottom: var(--space-3);
+}
+
+.resume-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+}
+
+.resume-button,
+.resume-download {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--color-text);
+  border-radius: 0;
+  background: var(--color-page);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.resume-button:hover,
+.resume-button:focus-visible,
+.resume-download:hover,
+.resume-download:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.resume-download {
+  display: inline-grid;
+  width: 2.15rem;
+  height: 2.15rem;
+  padding: 0;
+  place-items: center;
+  border-color: var(--color-accent);
+  border-radius: 0.25rem;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.resume-download svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.resume-download:hover,
+.resume-download:focus-visible {
+  background: var(--color-accent);
+  color: var(--color-page);
+}
+
+.muted-text,
+.experience-period {
+  color: var(--color-muted);
+}
+
+.experience-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-list li + li {
+  margin-top: var(--space-4);
+}
+
+.experience-list h3 {
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.experience-list h3 a {
+  color: inherit;
+  text-decoration-color: var(--color-rule);
+  text-underline-offset: 0.2em;
+  transition: color 150ms ease, text-decoration-color 150ms ease;
+}
+
+.experience-list h3 a:hover,
+.experience-list h3 a:focus-visible {
+  color: var(--color-accent);
+  text-decoration-color: currentColor;
+}
+
+.experience-list p {
+  margin-bottom: 0;
+}
+
+.experience-period {
+  margin-top: var(--space-1);
+  font-size: 0.875rem;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list a {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid var(--color-rule);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.contact-list svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: currentColor;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .introduction {
+    display: block;
+  }
+
+  .introduction-image {
+    width: min(100%, 18rem);
+    margin-top: var(--space-4);
+  }
+
+  .home section + section {
+    margin-top: var(--section-gap);
+  }
+}

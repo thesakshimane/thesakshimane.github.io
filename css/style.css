@@ -1,87 +1,225 @@
-/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Segoe UI", sans-serif; */
+}
+
+html,
+body {
+
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
 }
 
 body {
-  background: linear-gradient(135deg, #fdf7f7, #fce4ce);
-  color: #4a4a4a;
-  font-family: "Inter", sans-serif;
+
+  background: #FFF4EE;
+
+  color: #303030;
+
+  font-family: 'Inter', sans-serif;
   min-height: 100vh;
+  overflow-y: auto;
+
+}
+
+
+
+/* ---------------- LEFT SIDE ---------------- */
+
+.left-panel {
+
+  position: fixed;
+
+  left: 0;
+
+  top: 0;
+
+  width: 42vw;
+
+  height: 100vh;
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
+
   justify-content: center;
-  padding: 2rem;
-}
 
-/* Header with button */
-header {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.blog-button {
-  background-color: #bf6359;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.blog-button:hover {
-  background-color: #843c44;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  border-left: 4px solid #843c44;
-  transform: scale(1.02);
-}
-
-.main-content {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+
 }
 
-/* Profile picture */
-.profile-pic {
-  width: 260px;
-  height: 400px;
-  max-width: 90vw;
+
+
+.profile-photo {
+
+  width: 221px;
+
+  height: 338px;
+
+  max-width: 65vw;
+
   object-fit: cover;
+
   border-radius: 50%;
-  border: 2px solid #bf6359;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  margin-bottom: 3rem;
+
+  border: 2px solid #D45A4D;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+
 }
 
-/* Text below photo */
-.intro-text {
-  text-align: center;
-  color: #444;
-  font-size: 1.1rem;
+
+
+/* ---------------- RIGHT SIDE ---------------- */
+
+.right-panel {
+
+  margin-left: 42vw;
+
+  width: 58vw;
+
+  min-height: 100vh;
+
+  padding: 90px 90px 120px;
+
 }
 
-/* Mobile-friendly */
-@media (max-width: 600px) {
-  .profile-pic {
-    width: 180px;
-    height: 280px;
+
+
+/* ---------------- INTRO ---------------- */
+
+.hero {
+
+  max-width: 650px;
+
+}
+
+.hero h1 {
+
+  font-size: 36px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  margin-bottom: 32px;
+
+}
+
+.hero h1 span {
+
+  color: #D45A4D;
+
+}
+
+.hero p {
+
+  font-size: 18px;
+
+  line-height: 1.9;
+
+  color: #5d5d5d;
+
+  margin-bottom: 22px;
+
+}
+
+
+
+/* ---------------- NAVIGATION ---------------- */
+
+.navigation {
+
+  margin-top: 60px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+}
+
+
+
+.navigation a {
+
+  width: max-content;
+
+  text-decoration: none;
+
+  color: #303030;
+
+  font-size: 19px;
+
+  font-weight: 500;
+
+  transition: .25s;
+
+}
+
+
+
+.navigation a:hover {
+
+  color: #D45A4D;
+
+  transform: translateX(8px);
+
+}
+
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:900px) {
+
+  .left-panel {
+
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    padding: 60px 0 20px;
+
   }
 
-  .blog-button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+  .profile-photo {
+
+    width: 221px;
+
+    height: 338px;
+
   }
 
-  .intro-text {
-    font-size: 1rem;
+  .right-panel {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 40px 30px 70px;
+
   }
+
+  .hero h1 {
+
+    font-size: 30px;
+
+  }
+
+  .hero p {
+
+    font-size: 17px;
+
+  }
+
+  .navigation a {
+
+    font-size: 18px;
+
+  }
+
 }

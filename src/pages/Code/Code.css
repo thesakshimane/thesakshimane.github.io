@@ -1,0 +1,26 @@
+.project-gears {
+  display: block;
+  width: 5.5rem;
+  height: auto;
+  margin-top: var(--space-2);
+  color: var(--color-accent);
+}
+
+.gear {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.gear-large { animation: rotate-clockwise 5s linear infinite; }
+.gear-small { animation: rotate-counterclockwise 4s linear infinite; }
+
+@keyframes rotate-clockwise { to { transform: rotate(360deg); } }
+@keyframes rotate-counterclockwise { to { transform: rotate(-360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .gear { animation: none; }
+}
