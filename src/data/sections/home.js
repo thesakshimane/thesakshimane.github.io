@@ -8,7 +8,7 @@ export const homeContent = {
   ],
   image: {
     alt: 'A sunlit bookshelf and study space',
-    src: '/assests/images/image.png',
+    src: '/assets/images/image.png',
   },
   resume: {
     downloadLabel: 'Download Sakshi Mane resume',
