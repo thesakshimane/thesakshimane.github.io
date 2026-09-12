@@ -30,7 +30,7 @@ function Home() {
           </div>
         </div>
         <figure className="introduction-image">
-          <img alt={image.alt} decoding="async" fetchPriority="high" height="900" src={image.src} width="1600" />
+          <img alt={image.alt} src={image.src} />
         </figure>
       </section>
 

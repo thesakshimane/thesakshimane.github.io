@@ -13,7 +13,7 @@ function Write() {
         <div className="blog-list">
           {posts.map(({ description: postDescription, image, path, title }) => (
             <a className="blog-card" href={`${baseUrl}${path}`} key={path}>
-              <img alt="" decoding="async" height="430" src={`${baseUrl}${image}`} width="764" />
+              <img alt="" src={`${baseUrl}${image}`} />
               <div>
                 <h2>{title}</h2>
                 <p>{postDescription}</p>
