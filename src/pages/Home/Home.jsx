@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { homeContent, socialIconPaths } from '../../data/portfolioContent';
+import { experienceContent, homeContent, socialIconPaths } from '../../data';
 import './Home.css';
 
 function Home() {
-  const { contactHeading, contacts, experience, experienceHeading, image, introduction, name, resume } = homeContent;
+  const { contactHeading, contacts, image, introduction, name, resume } = homeContent;
+  const { entries: experience, heading: experienceHeading } = experienceContent;
 
   return (
     <main className="home">
@@ -29,16 +30,16 @@ function Home() {
           </div>
         </div>
         <figure className="introduction-image">
-          <img alt={image.alt} src={image.src} />
+          <img alt={image.alt} decoding="async" fetchPriority="high" height="900" src={image.src} width="1600" />
         </figure>
       </section>
 
       <section aria-labelledby="experience-heading">
-        <h2 id="experience-heading">{experienceHeading}</h2>
+        <h2 id="experience-heading"><Link to="/experience">{experienceHeading}</Link></h2>
         <ol className="experience-list">
-          {experience.map(({ organisation, path, period, role }) => (
+          {experience.map(({ organisation, period, role }) => (
             <li key={`${role}-${organisation}`}>
-              <h3>{path ? <Link to={path}>{role}</Link> : role}</h3>
+              <h3>{role}</h3>
               <p>{organisation}</p>
               {period && <p className="experience-period">{period}</p>}
             </li>

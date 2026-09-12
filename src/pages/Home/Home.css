@@ -151,15 +151,15 @@ h3 {
   font-size: 1rem;
 }
 
-.experience-list h3 a {
+.home h2 a {
   color: inherit;
   text-decoration-color: var(--color-rule);
   text-underline-offset: 0.2em;
   transition: color 150ms ease, text-decoration-color 150ms ease;
 }
 
-.experience-list h3 a:hover,
-.experience-list h3 a:focus-visible {
+.home h2 a:hover,
+.home h2 a:focus-visible {
   color: var(--color-accent);
   text-decoration-color: currentColor;
 }

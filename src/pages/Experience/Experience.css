@@ -1,0 +1,35 @@
+.experience-detail-list {
+  margin: var(--section-gap) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-detail-list > li + li {
+  margin-top: var(--section-gap);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-rule);
+}
+
+.experience-detail h1 {
+  margin-bottom: 0;
+}
+
+.experience-detail h2 {
+  margin-bottom: var(--space-1);
+  font-size: 1rem;
+}
+
+.detail-meta {
+  margin-bottom: 0;
+  color: var(--color-muted);
+}
+
+.detail-list {
+  max-width: 44rem;
+  margin: var(--space-3) 0 0;
+  padding-left: 1.2rem;
+}
+
+.detail-list li + li {
+  margin-top: var(--space-2);
+}

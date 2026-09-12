@@ -1,4 +1,4 @@
-import { codeContent } from '../../data/portfolioContent';
+import { codeContent } from '../../data';
 import './Code.css';
 
 function Code() {

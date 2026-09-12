@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
-import { navigation, themeControls } from './data/portfolioContent';
+import { navigation, themeControls } from './data';
 import Code from './pages/Code/Code';
-import PrimusTechsystems from './pages/Experience/PrimusTechsystems';
+import Experience from './pages/Experience/Experience';
 import Home from './pages/Home/Home';
 import Misc from './pages/Misc/Misc';
 import Write from './pages/Write/Write';
@@ -58,7 +58,7 @@ function App() {
         <Route element={<Home />} path="/" />
         <Route element={<Write />} path="/write" />
         <Route element={<Code />} path="/code" />
-        <Route element={<PrimusTechsystems />} path="/experience/primus-techsystems" />
+        <Route element={<Experience />} path="/experience" />
         <Route element={<Misc />} path="/misc" />
         <Route element={<Navigate replace to="/write" />} path="/blogs/*" />
         <Route element={<Home />} path="*" />

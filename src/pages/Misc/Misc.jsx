@@ -1,4 +1,4 @@
-import { miscContent } from '../../data/portfolioContent';
+import { miscContent } from '../../data';
 import './Misc.css';
 
 function Misc() {
